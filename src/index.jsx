@@ -353,7 +353,7 @@ function Header() {
 function Main() {
   return (
     <main className="main-container">
-      <h1 className="main-header-one">Hello Guys</h1>
+      <h1 className="main-header-one">React: What I have learnt so far</h1>
       <ol className="main-list">
         <li>I am learning React</li>
         <li>I have to make import statements for the npm modules i have installed</li>
