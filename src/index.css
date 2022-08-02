@@ -134,3 +134,12 @@ body {
   color: white;
   padding: 1rem 0.5rem;
 }
+
+code {
+  padding: 0.5rem;
+  display: inline-block;
+  color: hsl(0, 0%, 80%);
+  background: hsl(240, 1%, 15%); /* hsl(0, 0%, 12%); */
+  white-space: pre;
+  border-radius: 0.25rem;
+}

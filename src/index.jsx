@@ -331,46 +331,114 @@
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<RandomComponentName />);
 
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import reactLogo from "./assets/react-logo.svg";
+
+// function Header() {
+//   return (
+//     <header>
+//       <nav className="nav-container">
+//         <img className="nav-logo" src={reactLogo} alt="" />
+//         <ul className="nav-list">
+//           <li>Pricing</li>
+//           <li>About</li>
+//           <li>Contact</li>
+//         </ul>
+//       </nav>
+//     </header>
+//   );
+// }
+
+// function Main() {
+//   return (
+//     <main className="main-container">
+//       <h1 className="main-header-one">React: What I have learnt so far</h1>
+//       <ol className="main-list">
+//         <li>I have to make import statements for the npm modules i have installed</li>
+//         <code>{`import React from "react"; 
+//         import ReactDOM from "react-dom/client";`}</code>
+//         <li>I have to create Functions called Components with Pascal Case</li>
+//         <code>{`function RandomComponentName() {
+//           return (
+//                   <div>
+
+//                   </div>
+//           );
+//         }`}</code>
+//         <li>I have to create a variable root and set it ReactDom.createRoot and provide that the element to render it</li>
+//         <code>{`const root = ReactDOM.createRoot(document.getElementById('root'));`}</code>
+//         <li>I have to use the render method and give it the Component Name</li>
+//         <code>{`root.render(<RandomComponentName />);`}</code>
+//       </ol>
+//     </main>
+//   );
+// }
+
+// function Footer() {
+//   return (
+//     <footer className="footer-container">
+//       <small>© 2022 Murphy development. All rights reserved.</small>
+//     </footer>
+//   );
+// }
+
+// function RandomComponentName() {
+//   return (
+//     <div>
+//       <Header />
+//       <Main />
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<RandomComponentName />);
+
+// Similar to regular JS when we want to set a class on an element we use:
+// const ul = document.createElement("ul")
+// ul.className = "something"
+// in REACT when we want to give an element a class (in JSX) we have to use className="something" not the HTML way of class="something"
+
+
+// we are now moving into breaking up the HTML (JSX) into separate Components in their own Files..
+// we make Header.js (or .jsx) and copy/paste the Header Component
+// then we need to make a few changes:
+
+// we need to add 
+// import React from "react"
+// so it understands this is JSX 
+// (NOTE THIS MAY NOT BE NECCESSARY ANYMORE IN THE LATEST VERSION)
+
+// we need to EXPORT it
+// if this is the ONLY component we have :
+
+// export default Header
+
+// or you can put it BEFORE the function declaration :
+
+// export default function Header() {
+//   return (
+//         <header>
+
+//         </header>
+//   );
+// }
+
+// now in index.js we can IMPORT the Header
+// import Header from "./Header"
+
+// the spelling has to be the EXACT SAME as the FILE NAME, not neccessarily the component (function) name
+
+// and when we use it in the RandomComponentName (which is the whole page) we don't need to change anything because we have imported the component as "Header"
+
 import React from "react";
 import ReactDOM from "react-dom/client";
-import reactLogo from "./assets/react-logo.svg";
 
-function Header() {
-  return (
-    <header>
-      <nav className="nav-container">
-        <img className="nav-logo" src={reactLogo} alt="" />
-        <ul className="nav-list">
-          <li>Pricing</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-    </header>
-  );
-}
-
-function Main() {
-  return (
-    <main className="main-container">
-      <h1 className="main-header-one">React: What I have learnt so far</h1>
-      <ol className="main-list">
-        <li>I have to make import statements for the npm modules i have installed</li>
-        <li>I have to create Functions called Components with Pascal Case</li>
-        <li>I have to use ReactDom.createRoot and set the element location to render it</li>
-        <li>I have to use the render method and give it the Component Name</li>
-      </ol>
-    </main>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="footer-container">
-      <small>© 2022 Murphy development. All rights reserved.</small>
-    </footer>
-  );
-}
+import Header from "./Header"
+import Main from "./Main"
+import Footer from "./Footer"
 
 function RandomComponentName() {
   return (
@@ -384,9 +452,3 @@ function RandomComponentName() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RandomComponentName />);
-
-// Similar to regular JS when we want to set a class on an element we use:
-// const ul = document.createElement("ul")
-// ul.className = "something"
-// in REACT when we want to give an element a class (in JSX) we have to use className="something" not the HTML way of class="something"
-
